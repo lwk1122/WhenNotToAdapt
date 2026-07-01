@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="462" viewBox="0 0 740 462">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="36.0" y="32.0" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="start">Component level workload predictability</text>
+  <text x="36.0" y="52.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#6B7280" text-anchor="start">Unseen repository AUCs from proposal time features; components remain visible rather than hidden in one score.</text>
+  <line x1="176.0" y1="360.0" x2="606.0" y2="360.0" stroke="#111827" stroke-width="1.0"/>
+  <line x1="176.0" y1="66.0" x2="176.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="176.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">0.5</text>
+  <line x1="262.0" y1="66.0" x2="262.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="262.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">0.6</text>
+  <line x1="348.0" y1="66.0" x2="348.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="348.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">0.7</text>
+  <line x1="434.0" y1="66.0" x2="434.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="434.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">0.8</text>
+  <line x1="520.0" y1="66.0" x2="520.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="520.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">0.9</text>
+  <line x1="606.0" y1="66.0" x2="606.0" y2="360.0" stroke="#E5E7EB" stroke-width="0.8"/>
+  <text x="606.0" y="378.0" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#6B7280" text-anchor="middle">1.0</text>
+  <text x="166.0" y="92.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Request changes</text>
+  <rect x="176.0" y="79.0" width="160.6" height="16.0" fill="#0072B2"/>
+  <text x="342.6" y="92.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.687</text>
+  <text x="166.0" y="120.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Reviews</text>
+  <rect x="176.0" y="107.0" width="176.6" height="16.0" fill="#0072B2"/>
+  <text x="358.6" y="120.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.705</text>
+  <text x="166.0" y="148.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Inline comments</text>
+  <rect x="176.0" y="135.0" width="177.3" height="16.0" fill="#0072B2"/>
+  <text x="359.3" y="148.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.706</text>
+  <text x="166.0" y="176.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Human reviews</text>
+  <rect x="176.0" y="163.0" width="213.5" height="16.0" fill="#0072B2"/>
+  <text x="395.5" y="176.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.748</text>
+  <text x="166.0" y="204.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Later files related to tests</text>
+  <rect x="176.0" y="191.0" width="219.6" height="16.0" fill="#0072B2"/>
+  <text x="401.6" y="204.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.755</text>
+  <text x="166.0" y="232.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Later churn</text>
+  <rect x="176.0" y="219.0" width="229.6" height="16.0" fill="#0072B2"/>
+  <text x="411.6" y="232.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.767</text>
+  <text x="166.0" y="260.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Later files</text>
+  <rect x="176.0" y="247.0" width="230.1" height="16.0" fill="#0072B2"/>
+  <text x="412.1" y="260.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.768</text>
+  <text x="166.0" y="288.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Later commits</text>
+  <rect x="176.0" y="275.0" width="237.5" height="16.0" fill="#0072B2"/>
+  <text x="419.5" y="288.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.776</text>
+  <text x="166.0" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Issue comments</text>
+  <rect x="176.0" y="303.0" width="278.9" height="16.0" fill="#0072B2"/>
+  <text x="460.9" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.824</text>
+  <text x="166.0" y="344.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="end">Related issues</text>
+  <rect x="176.0" y="331.0" width="372.9" height="16.0" fill="#0072B2"/>
+  <text x="554.9" y="344.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#6B7280" text-anchor="start">0.934</text>
+  <text x="391.0" y="398.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#111827" text-anchor="middle">AUC</text>
+</svg>
