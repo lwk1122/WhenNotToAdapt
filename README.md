@@ -1,5 +1,4 @@
-This package contains the scripts, derived data, and result files needed to
-inspect the analyses reported in the manuscript.
+This package contains the scripts, derived data, and result files.
 
 # Manuscript Evidence Map
 
