@@ -1,9 +1,7 @@
-# Replication Package
-
 This package contains the scripts, derived data, and result files needed to
 inspect the analyses reported in the manuscript.
 
-## Manuscript Evidence Map
+# Manuscript Evidence Map
 
 - Study 1 and Study 2 use the AIDev pull request workload-gate pipeline.
   The main scripts are in `exp/scripts/aidev/`, and the copied outputs are in
@@ -16,7 +14,7 @@ inspect the analyses reported in the manuscript.
 - The queue, trace, and proxy simulator files under `exp/results/theory_support/`
   support mechanism checks only. They are not the main field evidence.
 
-## Main Result Files
+# Main Result Files
 
 - `ExtraExperiment/results/pull_request_workload_gate/aidev_main_gate_table.csv`
 - `ExtraExperiment/results/pull_request_workload_gate/aidev_qcvl_proxy_summary.csv`
@@ -26,7 +24,7 @@ inspect the analyses reported in the manuscript.
 - `exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/learned_runtime_task_results.csv`
 - `exp/results/emse_runtime/lmstudio_executable_context_gate_repeat_analysis_v1/runtime_repeat_analysis_report.md`
 
-## Evidence Boundaries
+# Evidence Boundaries
 
 The AIDev analyses are retrospective observational analyses. They support
 workload risk selection in logged pull requests. The executable context budget
@@ -39,7 +37,7 @@ they document protocol development. They are clearly marked as prompt-only,
 planning, dry-run, or non-evidence artifacts in their local README files. They
 are not used as manuscript evidence for the completed Study 3 result.
 
-## Basic Setup
+# Basic Setup
 
 Install the Python dependencies from the copied package root:
 
