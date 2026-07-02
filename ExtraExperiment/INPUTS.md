@@ -29,10 +29,10 @@ experiment module.
   execution packets for the first wave.
 - `results/pull_request_workload_gate/aidev_pr_level_features.csv`: derived
   feature table used by the workload-gate analyses.
-- `../exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/`:
+- `../exp/results/runtime/learned_runtime_gate_combined60_feature_cal000_v1/`:
   completed 60-task executable context budget outputs used for the manuscript
   Study 3 score-gate result.
-- `../exp/results/emse_runtime/lmstudio_executable_context_gate_repeat_analysis_v1/`:
+- `../exp/results/runtime/lmstudio_executable_context_gate_repeat_analysis_v1/`:
   original 30-task subset check used as an internal consistency analysis.
 
 ## Evidence Boundary
