@@ -1,8 +1,6 @@
-# EMSE AIDev Analysis Scripts
+# AIDev Analysis Scripts
 
-This directory contains the first AIDev pipeline for the EMSE revision.
-
-The goal is not to reuse the IJOC proxy simulator. This pipeline builds an
+This directory contains the first AIDev pipeline. This pipeline builds an
 observational validation layer from real AIDev PRs after proposal generation:
 
 1. Download or locate AIDev tables.
