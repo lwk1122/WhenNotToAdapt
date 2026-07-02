@@ -7,9 +7,9 @@ This package contains the scripts, derived data, and result files.
   `ExtraExperiment/results/pull_request_workload_gate/`.
 - Study 3 uses the executable context budget experiment. The task scripts are
   in `exp/scripts/runtime/`, and the completed 60-task score-gate outputs are
-  in `exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/`.
+  in `exp/results/runtime/learned_runtime_gate_combined60_feature_cal000_v1/`.
 - The original 30-task subset check is in
-  `exp/results/emse_runtime/lmstudio_executable_context_gate_repeat_analysis_v1/`.
+  `exp/results/runtime/lmstudio_executable_context_gate_repeat_analysis_v1/`.
 - The queue, trace, and proxy simulator files under `exp/results/theory_support/`
   support mechanism checks only. They are not the main field evidence.
 
@@ -19,9 +19,9 @@ This package contains the scripts, derived data, and result files.
 - `ExtraExperiment/results/pull_request_workload_gate/aidev_qcvl_proxy_summary.csv`
 - `ExtraExperiment/results/pull_request_workload_gate/aidev_workload_sensitivity_table.csv`
 - `ExtraExperiment/results/pull_request_workload_gate/aidev_resolution_survival_contrast.csv`
-- `exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/learned_runtime_gate_summary.json`
-- `exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/learned_runtime_task_results.csv`
-- `exp/results/emse_runtime/lmstudio_executable_context_gate_repeat_analysis_v1/runtime_repeat_analysis_report.md`
+- `exp/results/runtime/learned_runtime_gate_combined60_feature_cal000_v1/learned_runtime_gate_summary.json`
+- `exp/results/runtime/learned_runtime_gate_combined60_feature_cal000_v1/learned_runtime_task_results.csv`
+- `exp/results/runtime/lmstudio_executable_context_gate_repeat_analysis_v1/runtime_repeat_analysis_report.md`
 
 # Evidence Boundaries
 
