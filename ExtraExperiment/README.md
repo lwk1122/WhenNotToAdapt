@@ -31,7 +31,7 @@ The controlled-runtime first-wave materials in this `ExtraExperiment` copy are
 legacy execution protocols and readiness artifacts unless a completed result
 table is explicitly recorded. They are not used as manuscript evidence for the
 completed executable context budget experiment. The completed 60-task Study 3
-outputs are stored in `../exp/results/emse_runtime/`.
+outputs are stored in `../exp/results/runtime/`.
 
 ## Basic Setup
 
