@@ -1,11 +1,11 @@
-# EMSE Controlled-Runtime Analysis
+# Controlled-Runtime Analysis
 
 This directory contains analysis utilities for the controlled runtime evidence layer.
 
 These scripts do not execute repository code. They analyze completed paired runtime result CSVs.
 For the current manuscript, the completed executable context budget evidence is
 the 60-task fixed-candidate route selection experiment in
-`exp/results/emse_runtime/learned_runtime_gate_combined60_feature_cal000_v1/`.
+`exp/results/runtime/learned_runtime_gate_combined60_feature_cal000_v1/`.
 The older first-wave repository-execution files documented below are planning,
 dry-run, or readiness artifacts unless a completed validated result table is
 explicitly present.
@@ -15,9 +15,9 @@ explicitly present.
 Run the paired non-inferiority and resource analysis:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.analyze_runtime_pairs \
+/bin/python -m exp.scripts.runtime.analyze_runtime_pairs \
   --task-results exp/results/<run_dir>/shadow_runtime_task_results.csv \
-  --output-dir exp/results/emse_runtime/<analysis_dir> \
+  --output-dir exp/results/runtime/<analysis_dir> \
   --target sempc_lite \
   --reference rsrc_guarded \
   --success-margin 0.05 \
@@ -35,9 +35,9 @@ Outputs:
 Plan paired sample sizes before running publication-grade repository experiments:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.plan_runtime_power \
-  --output-dir exp/results/emse_runtime/power_plan_v1 \
-  --manifest exp/results/emse_runtime/manifest_v1/task_manifest.csv \
+/bin/python -m exp.scripts.runtime.plan_runtime_power \
+  --output-dir exp/results/runtime/power_plan_v1 \
+  --manifest exp/results/runtime/manifest_v1/task_manifest.csv \
   --margin 0.05 \
   --target-power 0.80
 ```
@@ -53,9 +53,9 @@ Outputs:
 Create a no-execution task-controller schedule for the first controlled-runtime batch:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.build_execution_matrix \
-  --manifest exp/results/emse_runtime/manifest_v1/task_manifest.csv \
-  --output-dir exp/results/emse_runtime/manifest_v1
+/bin/python -m exp.scripts.runtime.build_execution_matrix \
+  --manifest exp/results/runtime/manifest_v1/task_manifest.csv \
+  --output-dir exp/results/runtime/manifest_v1
 ```
 
 Outputs:
@@ -68,10 +68,10 @@ Outputs:
 Validate controller prompts and result logging without cloning repositories or running tests:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.dry_run_controller_harness \
-  --matrix exp/results/emse_runtime/manifest_v1/runtime_execution_matrix.csv \
-  --manifest exp/results/emse_runtime/manifest_v1/task_manifest.csv \
-  --output-dir exp/results/emse_runtime/dry_run_v1 \
+/bin/python -m exp.scripts.runtime.dry_run_controller_harness \
+  --matrix exp/results/runtime/manifest_v1/runtime_execution_matrix.csv \
+  --manifest exp/results/runtime/manifest_v1/task_manifest.csv \
+  --output-dir exp/results/runtime/dry_run_v1 \
   --max-tasks 2 \
   --mode offline
 ```
@@ -79,8 +79,8 @@ Validate controller prompts and result logging without cloning repositories or r
 Optional local LM Studio prompt-only dry run:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.dry_run_controller_harness \
-  --output-dir exp/results/emse_runtime/dry_run_lmstudio_smoke \
+/bin/python -m exp.scripts.runtime.dry_run_controller_harness \
+  --output-dir exp/results/runtime/dry_run_lmstudio_smoke \
   --max-tasks 1 \
   --controllers sempc_lite \
   --mode lmstudio
@@ -89,8 +89,8 @@ Optional local LM Studio prompt-only dry run:
 Full LM Studio prompt-only contract dry run for the 24-task first batch:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.dry_run_controller_harness \
-  --output-dir exp/results/emse_runtime/dry_run_lmstudio_full_contract_v1 \
+/bin/python -m exp.scripts.runtime.dry_run_controller_harness \
+  --output-dir exp/results/runtime/dry_run_lmstudio_full_contract_v1 \
   --max-tasks 24 \
   --mode lmstudio \
   --timeout 120 \
@@ -101,9 +101,9 @@ Full LM Studio prompt-only contract dry run for the 24-task first batch:
 Analyze the offline and LM Studio prompt-only plans:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.analyze_dry_run_decisions \
-  --dry-run-dirs exp/results/emse_runtime/dry_run_offline_full_v1 exp/results/emse_runtime/dry_run_lmstudio_full_contract_v1 \
-  --output-dir exp/results/emse_runtime/dry_run_analysis_lmstudio_contract_v1
+/bin/python -m exp.scripts.runtime.analyze_dry_run_decisions \
+  --dry-run-dirs exp/results/runtime/dry_run_offline_full_v1 exp/results/runtime/dry_run_lmstudio_full_contract_v1 \
+  --output-dir exp/results/runtime/dry_run_analysis_lmstudio_contract_v1
 ```
 
 Outputs:
@@ -122,9 +122,9 @@ The current contract dry run covers 24 tasks x 4 controllers with LM Studio mode
 The existing 8-task LM Studio pilot can validate the analysis shape:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.analyze_runtime_pairs \
+/bin/python -m exp.scripts.runtime.analyze_runtime_pairs \
   --task-results exp/results/theory_support/shadow_runtime_sphinx8_lm_pilot/shadow_runtime_task_results.csv \
-  --output-dir exp/results/emse_runtime/pilot_pair_analysis \
+  --output-dir exp/results/runtime/pilot_pair_analysis \
   --target sempc_lite \
   --reference rsrc_guarded \
   --success-margin 0.05 \
@@ -138,9 +138,9 @@ The pilot is not publication-grade evidence because it has only 8 paired tasks a
 Validate a completed task-results CSV before paired analysis:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.validate_runtime_results \
+/bin/python -m exp.scripts.runtime.validate_runtime_results \
   --task-results exp/results/<run_dir>/shadow_runtime_task_results.csv \
-  --output-dir exp/results/emse_runtime/<validation_dir> \
+  --output-dir exp/results/runtime/<validation_dir> \
   --target sempc_lite \
   --reference rsrc_guarded
 ```
@@ -161,7 +161,7 @@ Use `--allow-incomplete` or `--allow-prompt-only` only for schema debugging, nev
 Summarize the current controlled-runtime batch without executing repository code:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.report_runtime_batch_status
+/bin/python -m exp.scripts.runtime.report_runtime_batch_status
 ```
 
 Outputs:
@@ -180,7 +180,7 @@ The status report is an evidence-hygiene artifact. It should show zero completed
 Rank the planned task-controller rows for a future isolated first wave:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.plan_execution_priority
+/bin/python -m exp.scripts.runtime.plan_execution_priority
 ```
 
 Outputs:
@@ -197,7 +197,7 @@ The current first wave selects 12 tasks / 48 controller rows. It prioritizes tas
 Materialize the recommended first-wave rows into a recorder-compatible no-execution bundle:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.prepare_first_wave_execution_bundle
+/bin/python -m exp.scripts.runtime.prepare_first_wave_execution_bundle
 ```
 
 Outputs:
@@ -209,7 +209,7 @@ Outputs:
 - `first_wave_execution_bundle_v1/execution_runbook.md`
 - `first_wave_execution_bundle_v1/first_wave_bundle_summary.json`
 
-The current bundle contains 12 tasks / 48 controller rows, keeps `sempc_lite` and `rsrc_guarded` pair rows adjacent, and includes `static_conservative` plus `minimal_verify` controls for the same tasks. It is compatible with `record_isolated_runtime_result.py --bundle-dir exp/results/emse_runtime/first_wave_execution_bundle_v1`.
+The current bundle contains 12 tasks / 48 controller rows, keeps `sempc_lite` and `rsrc_guarded` pair rows adjacent, and includes `static_conservative` plus `minimal_verify` controls for the same tasks. It is compatible with `record_isolated_runtime_result.py --bundle-dir exp/results/runtime/first_wave_execution_bundle_v1`.
 
 For ordinary row-by-row recording, leave `--results-in` unset. Once `runtime_task_results_recorded.csv` exists in the bundle directory, `record_isolated_runtime_result.py` reads it by default before writing the next row, preserving earlier completed rows.
 
@@ -218,8 +218,8 @@ Use checklist flags only for facts that are true for the isolated run: `--prefli
 Prepare per-row isolated workspace handoff artifacts without executing repositories:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.prepare_isolated_row_workspace \
-  --output-dir exp/results/emse_runtime/first_wave_workspace_plan_v1
+/bin/python -m exp.scripts.runtime.prepare_isolated_row_workspace \
+  --output-dir exp/results/runtime/first_wave_workspace_plan_v1
 ```
 
 Outputs:
@@ -234,7 +234,7 @@ The workspace plan writes an agent prompt, guarded snapshot setup shell template
 Summarize already-local external agent traces that overlap first-wave tasks:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.summarize_existing_agent_traces
+/bin/python -m exp.scripts.runtime.summarize_existing_agent_traces
 ```
 
 Outputs:
@@ -248,8 +248,8 @@ This supplement does not execute repositories or models. It can inform qualitati
 Prepare a bridge from the first-wave bundle to the older live shadow-runtime runner:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.run_first_wave_shadow_bridge \
-  --output-dir exp/results/emse_runtime/first_wave_shadow_bridge_v1
+/bin/python -m exp.scripts.runtime.run_first_wave_shadow_bridge \
+  --output-dir exp/results/runtime/first_wave_shadow_bridge_v1
 ```
 
 Outputs:
@@ -259,12 +259,12 @@ Outputs:
 - `first_wave_shadow_bridge_v1/first_wave_shadow_bridge_report.md`
 - `first_wave_shadow_bridge_v1/first_wave_shadow_bridge_summary.json`
 
-The default bridge run is plan-only and performs no repository execution. The bridge exists so an approved isolated operator can execute the first-wave rows with the already-instrumented shadow-runtime runner and convert the resulting `shadow_runtime_task_results.csv` into the current EMSE runtime schema. Actual execution requires all of the following: `--execute --live-repo --ack-third-party-code`, `CAMC_RUNTIME_ISOLATION_ACK=1`, and no `SSH_AUTH_SOCK` in the environment. Use `--update-bundle-results` only after a real isolated run if the converted rows should become the first-wave bundle's `runtime_task_results_recorded.csv`.
+The default bridge run is plan-only and performs no repository execution. The bridge exists so an approved isolated operator can execute the first-wave rows with the already-instrumented shadow-runtime runner and convert the resulting `shadow_runtime_task_results.csv` into the current runtime schema. Actual execution requires all of the following: `--execute --live-repo --ack-third-party-code`, `CAMC_RUNTIME_ISOLATION_ACK=1`, and no `SSH_AUTH_SOCK` in the environment. Use `--update-bundle-results` only after a real isolated run if the converted rows should become the first-wave bundle's `runtime_task_results_recorded.csv`.
 
 Prepare a Docker isolation plan for running the first-wave bridge:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.prepare_first_wave_docker_isolation
+/bin/python -m exp.scripts.runtime.prepare_first_wave_docker_isolation
 ```
 
 Outputs:
@@ -280,16 +280,16 @@ This generator is plan-only. It does not build Docker images, launch containers,
 Generate first-wave packets from the contracted LM Studio dry-run plans:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.build_isolated_execution_packets \
-  --bundle-dir exp/results/emse_runtime/first_wave_execution_bundle_v1 \
-  --dry-run-plans exp/results/emse_runtime/dry_run_lmstudio_full_contract_v1/runtime_dry_run_plans.csv \
-  --output-dir exp/results/emse_runtime/first_wave_execution_packets_v1
+/bin/python -m exp.scripts.runtime.build_isolated_execution_packets \
+  --bundle-dir exp/results/runtime/first_wave_execution_bundle_v1 \
+  --dry-run-plans exp/results/runtime/dry_run_lmstudio_full_contract_v1/runtime_dry_run_plans.csv \
+  --output-dir exp/results/runtime/first_wave_execution_packets_v1
 ```
 
 Generate the first-wave status report:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.report_first_wave_status
+/bin/python -m exp.scripts.runtime.report_first_wave_status
 ```
 
 The first-wave status wrapper reads `runtime_task_results_recorded.csv` if it exists in the bundle directory; otherwise it reads `runtime_task_results_empty.csv`. It also writes `first_wave_status_source.json` so the selected result source is auditable. Legacy first-wave protocol status: 48 planned rows, 12 tasks, 0 completed rows, 0 primary-metric-complete rows, and 48 markdown plus 48 JSON packet files present. This status refers only to the older repository-execution first-wave bundle, not to the completed 60-task fixed-candidate Study 3.
@@ -297,7 +297,7 @@ The first-wave status wrapper reads `runtime_task_results_recorded.csv` if it ex
 Generate the first-wave operator launch sheet:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.prepare_first_wave_launch_sheet
+/bin/python -m exp.scripts.runtime.prepare_first_wave_launch_sheet
 ```
 
 Outputs:
@@ -311,7 +311,7 @@ The launch sheet converts the first-wave packet index into row-level operator ac
 Generate the preflight-clearance handoff:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.prepare_preflight_clearance_handoff
+/bin/python -m exp.scripts.runtime.prepare_preflight_clearance_handoff
 ```
 
 Outputs:
@@ -325,9 +325,9 @@ This handoff preserves the current failing preflight state and provides command 
 Validate the empty template before execution:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.validate_runtime_results \
-  --task-results exp/results/emse_runtime/first_wave_execution_bundle_v1/runtime_task_results_empty.csv \
-  --output-dir exp/results/emse_runtime/first_wave_execution_bundle_v1_validation \
+/bin/python -m exp.scripts.runtime.validate_runtime_results \
+  --task-results exp/results/runtime/first_wave_execution_bundle_v1/runtime_task_results_empty.csv \
+  --output-dir exp/results/runtime/first_wave_execution_bundle_v1_validation \
   --target sempc_lite \
   --reference rsrc_guarded
 ```
@@ -339,23 +339,23 @@ Expected status before real execution: `FAIL`, with `incomplete_execute_status` 
 Run a synthetic completed-row drill to verify the validation, pair-analysis, and publication-artifact plumbing:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.make_first_wave_analysis_drill
-.venv_emse/bin/python -m exp.scripts.emse_runtime.validate_runtime_results \
-  --task-results exp/results/emse_runtime/first_wave_analysis_drill_v1/runtime_task_results_synthetic_completed.csv \
-  --output-dir exp/results/emse_runtime/first_wave_analysis_drill_validation_v1 \
+/bin/python -m exp.scripts.runtime.make_first_wave_analysis_drill
+/bin/python -m exp.scripts.runtime.validate_runtime_results \
+  --task-results exp/results/runtime/first_wave_analysis_drill_v1/runtime_task_results_synthetic_completed.csv \
+  --output-dir exp/results/runtime/first_wave_analysis_drill_validation_v1 \
   --target sempc_lite \
   --reference rsrc_guarded
-.venv_emse/bin/python -m exp.scripts.emse_runtime.analyze_runtime_pairs \
-  --task-results exp/results/emse_runtime/first_wave_analysis_drill_v1/runtime_task_results_synthetic_completed.csv \
-  --output-dir exp/results/emse_runtime/first_wave_analysis_drill_pair_analysis_v1 \
+/bin/python -m exp.scripts.runtime.analyze_runtime_pairs \
+  --task-results exp/results/runtime/first_wave_analysis_drill_v1/runtime_task_results_synthetic_completed.csv \
+  --output-dir exp/results/runtime/first_wave_analysis_drill_pair_analysis_v1 \
   --target sempc_lite \
   --reference rsrc_guarded \
   --success-margin 0.05 \
   --min-publication-pairs 30 \
   --bootstrap-rounds 500
-.venv_emse/bin/python -m exp.scripts.emse_runtime.make_runtime_publication_artifacts \
-  --analysis-dir exp/results/emse_runtime/first_wave_analysis_drill_pair_analysis_v1 \
-  --output-dir exp/results/emse_runtime/first_wave_analysis_drill_publication_artifacts_v1 \
+/bin/python -m exp.scripts.runtime.make_runtime_publication_artifacts \
+  --analysis-dir exp/results/runtime/first_wave_analysis_drill_pair_analysis_v1 \
+  --output-dir exp/results/runtime/first_wave_analysis_drill_publication_artifacts_v1 \
   --evidence-status synthetic_drill_not_publication_evidence \
   --scope-note 'Synthetic first-wave rows verify the validation-analysis-publication plumbing only; no repository code was executed and no solve-rate or resource claim is supported.'
 ```
@@ -367,7 +367,7 @@ The drill creates 24 completed-looking primary rows for 12 first-wave pairs and 
 Summarize what the current controlled-runtime evidence can and cannot support:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_runtime.plan_runtime_evidence_strategy
+/bin/python -m exp.scripts.runtime.plan_runtime_evidence_strategy
 ```
 
 Outputs:
