@@ -29,8 +29,8 @@ The feature builder searches recursively for Parquet files whose path contains t
 Install the revision dependencies from the repository root:
 
 ```bash
-python3 -m venv .venv_emse
-.venv_emse/bin/python -m pip install -r requirements-emse.txt
+python3 -m venv 
+/bin/python -m pip install -r requirements.txt
 ```
 
 Network access is needed only for downloading the dataset or installing packages.
@@ -41,7 +41,7 @@ Download selected AIDev tables. The default downloader uses `curl --continue-at 
 validates Parquet footers, so interrupted files such as large commit detail tables can be resumed:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.download_aidev
+/bin/python -m exp.scripts.aidev.download_aidev
 ```
 
 If Hugging Face snapshot/Xet download stalls, use the default `curl` method or download individual
@@ -52,25 +52,25 @@ Parquet tables into `exp/Dataset/AIDev/raw/` and rerun the feature builder. The 
 Resume specific useful tables:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.download_aidev --method curl --tables pr_commit_details pr_timeline
+/bin/python -m exp.scripts.aidev.download_aidev --method curl --tables pr_commit_details pr_timeline
 ```
 
 Build PR level features and outcomes:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.build_features
+/bin/python -m exp.scripts.aidev.build_features
 ```
 
 Run the initial lightweight calibrated routing diagnostic:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.evaluate_abstention
+/bin/python -m exp.scripts.aidev.evaluate_abstention
 ```
 
-Run the EMSE split evaluation:
+Run the split evaluation:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.evaluate_workload_gate
+/bin/python -m exp.scripts.aidev.evaluate_workload_gate
 ```
 
 Compare gate baselines under the same calibration protocol. This includes the defensible-feature gate,
@@ -78,73 +78,73 @@ uncertainty threshold rule, logistic model without agent identity, categorical p
 logistic classifier with workload weights:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.evaluate_gate_baselines
+/bin/python -m exp.scripts.aidev.evaluate_gate_baselines
 ```
 
 Evaluate individual downstream workload components:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.evaluate_workload_components
+/bin/python -m exp.scripts.aidev.evaluate_workload_components
 ```
 
 Analyze gate error and routing cases for RQ4:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.analyze_gate_errors
+/bin/python -m exp.scripts.aidev.analyze_gate_errors
 ```
 
 Compute repository cluster bootstrap uncertainty intervals for the main workload gate metrics:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.bootstrap_gate_uncertainty
+/bin/python -m exp.scripts.aidev.bootstrap_gate_uncertainty
 ```
 
 Analyze subgroup and shift diagnostics for the global workload gate:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.analyze_subgroup_shift
+/bin/python -m exp.scripts.aidev.analyze_subgroup_shift
 ```
 
 Check whether timing-sensitive PR API aggregate fields drive the gate:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.analyze_feature_boundary_ablation
+/bin/python -m exp.scripts.aidev.analyze_feature_boundary_ablation
 ```
 
 Analyze censored time to closure diagnostics for accepted and routed PRs:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.analyze_resolution_survival
+/bin/python -m exp.scripts.aidev.analyze_resolution_survival
 ```
 
 Evaluate whether the gate conclusions change under alternative downstream workload definitions and high workload thresholds:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.evaluate_workload_sensitivity
+/bin/python -m exp.scripts.aidev.evaluate_workload_sensitivity
 ```
 
 Create manuscript facing result tables:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.summarize_aidev_results
+/bin/python -m exp.scripts.aidev.summarize_aidev_results
 ```
 
 Generate editable SVG figures and LaTeX ready PDF copies:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.make_aidev_figures
+/bin/python -m exp.scripts.aidev.make_aidev_figures
 ```
 
 Generate LaTeX table inputs for the manuscript:
 
 ```bash
-.venv_emse/bin/python -m exp.scripts.emse_aidev.make_latex_tables
+/bin/python -m exp.scripts.aidev.make_latex_tables
 ```
 
 Outputs are written to:
 
 ```text
-exp/results/emse_aidev/
+exp/results/aidev/
 ```
 
 Main output files:
