@@ -1,7 +1,5 @@
 This package contains the scripts, derived data, and result files.
 
-# Manuscript Evidence Map
-
 - Study 1 and Study 2 use the AIDev pull request workload-gate pipeline.
   The main scripts are in `exp/scripts/aidev/`, and the copied outputs are in
   `ExtraExperiment/results/pull_request_workload_gate/`.
